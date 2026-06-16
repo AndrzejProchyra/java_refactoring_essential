@@ -1,12 +1,12 @@
 package com.codemanship.refactoring.legacycode;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-
-import java.net.http.HttpClient;
-
 public class ShippingCalculator {
 
-    private final OrderClient orderClient = new OrderClient();
+    private final OrderClient orderClient;
+
+    public ShippingCalculator(OrderClient client) {
+        orderClient = client;
+    }
 
     public double calculateShipping(int orderId) {
 
