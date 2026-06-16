@@ -9,11 +9,7 @@ class Product {
         this.onSale = onSale;
     }
 
-    public boolean isOnSale() {
-        return onSale;
-    }
-
     public double calculateFinalPrice() {
-        return isOnSale() ? price * 0.8 : price;
+        return onSale ? price * 0.8 : price;
     }
 }
