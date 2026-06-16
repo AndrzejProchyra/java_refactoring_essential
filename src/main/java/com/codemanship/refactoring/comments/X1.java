@@ -3,15 +3,15 @@ package com.codemanship.refactoring.comments;
 public class X1 {
 
     static int m(int lowerBound, int upperBound) {
-        int p = 0;
+        int accumulatedSum = 0;
 
         for (int i = lowerBound; i <= upperBound; i++) {
             // Add square of each number in the range
-            p += n(i);
+            accumulatedSum += n(i);
         }
 
         // Return accumulated sum
-        return p;
+        return accumulatedSum;
     }
 
     static int n(int k) {
