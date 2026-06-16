@@ -26,7 +26,7 @@ class ShippingCalculatorTest {
         OrderClient client = (orderId -> new Order(
                 1001,
                 "EXPRESS",
-                42.5 ,
+                42.5,
                 28.0,
                 false));
         ShippingCalculator calculator = new ShippingCalculator(client);
@@ -34,5 +34,20 @@ class ShippingCalculatorTest {
         double shippingCost = calculator.calculateShipping(1001);
 
         assertEquals(36.8, shippingCost);
+    }
+
+    @Test
+    void calculatesOvernightShippingType() {
+        OrderClient client = (orderId -> new Order(
+                1001,
+                "OVERNIGHT",
+                2.0,
+                28.0,
+                false));
+        ShippingCalculator calculator = new ShippingCalculator(client);
+
+        double shippingCost = calculator.calculateShipping(1001);
+
+        assertEquals(27.4, shippingCost);
     }
 }
