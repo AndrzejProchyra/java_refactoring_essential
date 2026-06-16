@@ -2,11 +2,9 @@ package com.codemanship.refactoring.featureenvy;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class PriceCalculatorTest {
-
-    private final PriceCalculator calculator = new PriceCalculator();
+class ProductTest {
 
     @Test
     void shouldApplyDiscountWhenProductIsOnSale() {
