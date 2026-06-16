@@ -15,12 +15,7 @@ public class Order {
     public OrderSummary summarise() {
 
         // Validation
-        if (items == null) {
-            throw new IllegalStateException("Items cannot be null");
-        }
-        if (items.isEmpty()) {
-            throw new IllegalStateException("Order must contain items");
-        }
+        validate();
 
         // Subtotal calculation
         double subtotal = 0.0;
@@ -44,5 +39,14 @@ public class Order {
         double total = taxableAmount + tax;
 
         return new OrderSummary(subtotal, discount, tax, total);
+    }
+
+    private void validate() {
+        if (items == null) {
+            throw new IllegalStateException("Items cannot be null");
+        }
+        if (items.isEmpty()) {
+            throw new IllegalStateException("Order must contain items");
+        }
     }
 }
