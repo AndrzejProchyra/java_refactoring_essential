@@ -14,7 +14,6 @@ public class X1 {
     }
 
     static int squareOf(int k) {
-        // Return square of input
         return k * k;
     }
 }
