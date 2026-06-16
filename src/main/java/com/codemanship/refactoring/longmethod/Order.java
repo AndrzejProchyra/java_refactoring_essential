@@ -13,21 +13,15 @@ public class Order {
     }
 
     public OrderSummary summarise() {
-
-        // Validation
         validate();
 
-        // Subtotal calculation
         double subtotal = getSubtotal();
 
-        // Discount rules
         double discount = getDiscount(subtotal);
 
-        // Tax calculation
         double taxableAmount = subtotal - discount;
         double tax = taxableAmount * 0.20;
 
-        // Total calculation
         double total = taxableAmount + tax;
 
         return new OrderSummary(subtotal, discount, tax, total);
