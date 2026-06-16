@@ -18,12 +18,6 @@ class Product {
     }
 
     public double calculateFinalPrice() {
-        double finalPrice = getPrice();
-
-        if (isOnSale()) {
-            finalPrice = finalPrice * 0.8;
-        }
-
-        return finalPrice;
+        return isOnSale() ? getPrice() * 0.8 : getPrice();
     }
 }
