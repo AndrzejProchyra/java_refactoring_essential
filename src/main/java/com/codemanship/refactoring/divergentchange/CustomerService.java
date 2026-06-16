@@ -2,6 +2,8 @@ package com.codemanship.refactoring.divergentchange;
 
 public class CustomerService {
 
+    private final LoyaltyService loyaltyService = new LoyaltyService();
+
     public boolean isValidEmail(String email) {
         return EmailValidator.validate(email);
     }
@@ -11,7 +13,7 @@ public class CustomerService {
     }
 
     public int calculateLoyaltyPoints(int numberOfPurchases) {
-        return numberOfPurchases * 10;
+        return loyaltyService.calculateLoyaltyPoints(numberOfPurchases);
     }
 
     public String determineAccountStatus(int daysSinceLastLogin) {
