@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class SquareSummerTest {
 
     @Test
-    void t1() {
+    void sumsTheSquaresBetweenValues() {
         int a = 7;
         int b = 12;
 
