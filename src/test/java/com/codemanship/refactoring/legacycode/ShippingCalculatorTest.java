@@ -1,0 +1,23 @@
+package com.codemanship.refactoring.legacycode;
+
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+class ShippingCalculatorTest {
+
+    @Test
+    void calculatesStandardShippingType() {
+        OrderClient client = (orderId -> new Order(
+                1001,
+                "STANDARD",
+                5.0,
+                1.0,
+                false));
+        ShippingCalculator calculator = new ShippingCalculator(client);
+
+        double shippingCost = calculator.calculateShipping(1001);
+
+        assertEquals(2.5, shippingCost);
+    }
+}
