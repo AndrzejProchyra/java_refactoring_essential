@@ -20,4 +20,19 @@ class ShippingCalculatorTest {
 
         assertEquals(2.5, shippingCost);
     }
+
+    @Test
+    void calculatesExpressShippingType() {
+        OrderClient client = (orderId -> new Order(
+                1001,
+                "EXPRESS",
+                42.5 ,
+                28.0,
+                false));
+        ShippingCalculator calculator = new ShippingCalculator(client);
+
+        double shippingCost = calculator.calculateShipping(1001);
+
+        assertEquals(36.8, shippingCost);
+    }
 }
