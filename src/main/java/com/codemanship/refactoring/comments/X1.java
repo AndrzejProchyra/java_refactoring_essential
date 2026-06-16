@@ -7,13 +7,13 @@ public class X1 {
 
         for (int i = lowerBound; i <= upperBound; i++) {
             // Add square of each number in the range
-            accumulatedSum += square(i);
+            accumulatedSum += squareOf(i);
         }
 
         return accumulatedSum;
     }
 
-    static int square(int k) {
+    static int squareOf(int k) {
         // Return square of input
         return k * k;
     }
