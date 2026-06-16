@@ -7,7 +7,7 @@ public class CustomerService {
     }
 
     public String formatDisplayName(String firstName, String lastName) {
-        return firstName.trim() + " " + lastName.trim().toUpperCase();
+        return CustomerDisplayFormatter.format(firstName, lastName);
     }
 
     public int calculateLoyaltyPoints(int numberOfPurchases) {
