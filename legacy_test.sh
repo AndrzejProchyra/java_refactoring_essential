@@ -3,7 +3,7 @@ set -euo pipefail
 
 MAINCLASS=com.codemanship.refactoring.legacycode.ShippingApp
 
-JAR=$(find target -name '*.jar' -print -quit 2>/dev/null)
+JAR=$(find target -name '*.jar' ! -name 'original-*' -print -quit 2>/dev/null)
 
 if [ -z "$JAR" ]; then
     echo "No JAR found in target/. Run mvn package first."
