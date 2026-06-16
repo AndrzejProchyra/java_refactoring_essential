@@ -3,6 +3,7 @@ package com.codemanship.refactoring.divergentchange;
 public class CustomerService {
 
     private final LoyaltyService loyaltyService = new LoyaltyService();
+    private final AccountStatusService accountStatusService = new AccountStatusService();
 
     public boolean isValidEmail(String email) {
         return EmailValidator.validate(email);
@@ -17,11 +18,6 @@ public class CustomerService {
     }
 
     public String determineAccountStatus(int daysSinceLastLogin) {
-        if (daysSinceLastLogin > 365) {
-            return "INACTIVE";
-        } else if (daysSinceLastLogin > 30) {
-            return "DORMANT";
-        }
-        return "ACTIVE";
+        return accountStatusService.determineAccountStatus(daysSinceLastLogin);
     }
 }
