@@ -3,7 +3,7 @@ package com.codemanship.refactoring.comments;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class X1Test {
+public class SquareSummerTest {
 
     @Test
     void t1() {
@@ -16,7 +16,7 @@ public class X1Test {
             expected += i * i;
         }
 
-        int actual = X1.sumOfTheSquaresBetween(a, b);
+        int actual = SquareSummer.sumOfTheSquaresBetween(a, b);
 
         assertEquals(expected, actual);
     }

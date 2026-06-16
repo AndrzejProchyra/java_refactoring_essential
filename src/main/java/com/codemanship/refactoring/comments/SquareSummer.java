@@ -1,6 +1,6 @@
 package com.codemanship.refactoring.comments;
 
-public class X1 {
+public class SquareSummer {
 
     static int sumOfTheSquaresBetween(int lowerBound, int upperBound) {
         int accumulatedSum = 0;
