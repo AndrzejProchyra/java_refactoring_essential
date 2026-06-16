@@ -6,7 +6,6 @@ public class X1 {
         int accumulatedSum = 0;
 
         for (int i = lowerBound; i <= upperBound; i++) {
-            // Add square of each number in the range
             accumulatedSum += squareOf(i);
         }
 
