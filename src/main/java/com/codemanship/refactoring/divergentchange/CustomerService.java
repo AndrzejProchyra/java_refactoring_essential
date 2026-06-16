@@ -3,10 +3,7 @@ package com.codemanship.refactoring.divergentchange;
 public class CustomerService {
 
     public boolean isValidEmail(String email) {
-        if (email == null) {
-            return false;
-        }
-        return email.matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$");
+        return EmailValidator.validate(email);
     }
 
     public String formatDisplayName(String firstName, String lastName) {
@@ -24,5 +21,14 @@ public class CustomerService {
             return "DORMANT";
         }
         return "ACTIVE";
+    }
+
+    public static class EmailValidator {
+        public static boolean validate(String email) {
+            if (email == null) {
+                return false;
+            }
+            return email.matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$");
+        }
     }
 }
