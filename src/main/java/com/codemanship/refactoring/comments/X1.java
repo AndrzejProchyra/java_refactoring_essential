@@ -10,7 +10,6 @@ public class X1 {
             accumulatedSum += n(i);
         }
 
-        // Return accumulated sum
         return accumulatedSum;
     }
 
